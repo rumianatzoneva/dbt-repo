@@ -1,0 +1,16 @@
+version: 2
+# Raw data. Sources : Staging models = 1:1
+sources:
+  - name: snowflake
+    description: "Customer table"
+    database: dev_sandbox
+    schema: rtzoneva  
+    tables:
+      - name: customer
+        columns:
+        - name: cid
+          tests:
+            - not_null
+        - name: customer_name
+          tests:
+            - not_null
