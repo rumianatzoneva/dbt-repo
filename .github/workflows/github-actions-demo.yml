@@ -12,15 +12,27 @@ jobs:
         env:
             DBT_PROFILES_DIR: ./
             
-            DBT_SNOWFLAKE_ACCOUNT: "{{ env_var('DBT_SNOWFLAKE_ACCOUNT') }}"
+            DBT_SNOWFLAKE_ACCOUNT: 'ey37413.eu-west-3'
             
-            DBT_SNOWFLAKE_USERNAME: ${{ secrets.DBT_SNOWFLAKE_USERNAME }}
-            DBT_SNOWFLAKE_PW: ${{ secrets.DBT_SNOWFLAKE_PW }}
-            DBT_SNOWFLAKE_ROLE: ${{ secrets.DBT_SNOWFLAKE_ROLE }}
+            DBT_SNOWFLAKE_USERNAME: RTZONEVA
+            DBT_SNOWFLAKE_PW: 'Rtzoneva1234!'
+            DBT_SNOWFLAKE_ROLE: 'SYSADMIN'
             
-            DBT_SNOWFLAKE_DATABASE: "{{ env_var('DBT_SNOWFLAKE_DATABASE') }}"
-            DBT_SNOWFLAKE_WAREHOUSE: "{{ env_var('DBT_SNOWFLAKE_WAREHOUSE') }}"
-            DBT_SNOWFLAKE_SCHEMA: "{{ env_var('DBT_SNOWFLAKE_SCHEMA') }}" 
+            DBT_SNOWFLAKE_DATABASE: 'DEV_SANDBOX'
+            DBT_SNOWFLAKE_WAREHOUSE: 'DEV_WH'
+            DBT_SNOWFLAKE_SCHEMA: 'RTZONEVA' 
+            
+            # DBT_PROFILES_DIR: ./
+            
+            # DBT_SNOWFLAKE_ACCOUNT: "{{ env_var('DBT_SNOWFLAKE_ACCOUNT') }}"
+            
+            # DBT_SNOWFLAKE_USERNAME: ${{ secrets.DBT_SNOWFLAKE_USERNAME }}
+            # DBT_SNOWFLAKE_PW: ${{ secrets.DBT_SNOWFLAKE_PW }}
+            # DBT_SNOWFLAKE_ROLE: ${{ secrets.DBT_SNOWFLAKE_ROLE }}
+            
+            # DBT_SNOWFLAKE_DATABASE: "{{ env_var('DBT_SNOWFLAKE_DATABASE') }}"
+            # DBT_SNOWFLAKE_WAREHOUSE: "{{ env_var('DBT_SNOWFLAKE_WAREHOUSE') }}"
+            # DBT_SNOWFLAKE_SCHEMA: "{{ env_var('DBT_SNOWFLAKE_SCHEMA') }}" 
 
         steps:
         - name: Check out
