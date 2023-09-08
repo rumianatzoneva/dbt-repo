@@ -47,7 +47,9 @@ jobs:
           run: |
             pip3 install dbt-snowflake
             dbt deps
-
+         
+        - name: Dump GITHUB_CONTEXT
+          run: echo "$GITHUB_CONTEXT"
         # dbt related commands here - run use --target prod/dev to run for specific environments
         - name: Run dbt models
           run: dbt debug --config-dir # dbt run target dev
