@@ -6,17 +6,15 @@ on:
     
     workflow_dispatch:
 
-env:
-    DBT_PROFILES_DIR: ./
-
-    DBT_SNOWFLAKE_USERNAME: ${{ secrets.DBT_SNOWFLAKE_USERNAME }}
-    DBT_SNOWFLAKE_PW: ${{ secrets.DBT_SNOWFLAKE_PW }}
-    DBT_SNOWFLAKE_ROLE: ${{ secrets.DBT_SNOWFLAKE_ROLE }}
-
 jobs:
     build-and-deploy:
-        name: schedule_dbt_run
         runs-on: ubuntu-latest
+        env:
+            DBT_PROFILES_DIR: ./
+
+            DBT_SNOWFLAKE_USERNAME: ${{ secrets.DBT_SNOWFLAKE_USERNAME }}
+            DBT_SNOWFLAKE_PW: ${{ secrets.DBT_SNOWFLAKE_PW }}
+            DBT_SNOWFLAKE_ROLE: ${{ secrets.DBT_SNOWFLAKE_ROLE }}
 
         steps:
         - name: Check out
@@ -36,5 +34,5 @@ jobs:
         - name: Run dbt models
           run: dbt run
 
-    - name: Test dbt models
-      run: dbt test
+        - name: Test dbt models
+          run: dbt test
