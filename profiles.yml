@@ -31,16 +31,15 @@ dbt_project:
     dev:
       type: snowflake
       threads: 1
-      account: 'ey37413.eu-west-3'
 
       # User/password auth
-      user: RTZONEVA
-      password: 'Rtzoneva1234!'
-
-      role: 'SYSADMIN'
-      database: 'DEV_SANDBOX'
-      warehouse: 'DEV_WH'
-      schema: 'RTZONEVA'
+      account: 'zx15293.eu-west-3' # 'ey37413.eu-west-3' or "{{ env_var('DBT_SNOWFLAKE_ACCOUNT') }}"
+      user: RTZONEVA #"{{ env_var('DBT_SNOWFLAKE_USERNAME') }}"
+      role: SYSADMIN # "{{ env_var('DBT_SNOWFLAKE_ROLE') }}"
+      password: 'Rtzoneva1234!' # "{{ env_var('DBT_SNOWFLAKE_PW') }}"
+      database: DEV_SANDBOX # "{{ env_var('DBT_SNOWFLAKE_DATABASE') }}"
+      warehouse: DEV_WH # "{{ env_var('DBT_SNOWFLAKE_WAREHOUSE') }}"
+      schema: RTZONEVA #"{{ env_var('DBT_SNOWFLAKE_SCHEMA') }}"
       client_session_keep_alive: False
       query_tag: github_action_query
 
