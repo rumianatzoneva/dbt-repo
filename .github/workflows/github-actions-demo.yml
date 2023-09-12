@@ -9,10 +9,9 @@ on:
 env:
     DBT_PROFILES_DIR: ./
     
-    DBT_SNOWFLAKE_ACCOUNT: ey37413 #'PMJSPNV.ZX15293' 'ey37413.eu-west-3':tested with ey37413.eu-west-3
-    
-    DBT_SNOWFLAKE_USERNAME: RTZONEVA
-    DBT_SNOWFLAKE_PW: Rtzoneva1234!
+    SNOWFLAKE_ACCOUNT:   ${{ secrets.SNOWFLAKE_ACCOUNT }}
+    SNOWFLAKE_USERNAME: ${{ secrets.SNOWFLAKE_USERNAME }}
+    SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
     DBT_SNOWFLAKE_ROLE: ACCOUNTADMIN
     
     DBT_SNOWFLAKE_DATABASE: DEV_SANDBOX
@@ -48,7 +47,8 @@ jobs:
             dbt deps
          
         - name: Dump GITHUB_CONTEXT
-          run: echo "$GITHUB_CONTEXT"
+          run: echo ${{ github.workspace }}
+        
         # dbt related commands here - run use --target prod/dev to run for specific environments
         - name: Run dbt models
           run: dbt run 
