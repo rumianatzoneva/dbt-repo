@@ -34,9 +34,9 @@ dbt_project:
 
       # User/password auth
       # account: zx15293.eu-west-3 : tested with zx15293.eu-west-3
-      account: "${{ secrets.SNOWFLAKE_ACCOUNT }}"
-      username: "${{ secrets.SNOWFLAKE_USERNAME }}"
-      password: "${{ secrets.SNOWFLAKE_PASSWORD }}"
+      account: zx15293.eu-west-3
+      username: RTZONEVA
+      password: Rtzoneva1234!
       role: ACCOUNTADMIN # "{{ env_var('DBT_SNOWFLAKE_ROLE') }}"
       database: DEV_SANDBOX # "{{ env_var('DBT_SNOWFLAKE_DATABASE') }}"
       warehouse: DEV_WH # "{{ env_var('DBT_SNOWFLAKE_WAREHOUSE') }}"
