@@ -6,16 +6,16 @@ on:
     
     workflow_dispatch:
 
-env:
-    DBT_PROFILES_DIR: ./
+# env:
+#     DBT_PROFILES_DIR: ./
     
-    account: 'snwflk_gtb.eu-west-1'
-    user: RUMIANA_TZONEVA
-    password: "{{ secrets.SNOWFLAKE_PASSWORD }}"  
-    role: ACCOUNTADMIN
-    database: DEV_SANDBOX 
-    warehouse: COMPUTE_WH 
-    schema: RTZONEVA
+#     account: 'snwflk_gtb.eu-west-1'
+#     user: RUMIANA_TZONEVA
+#     password: "{{ secrets.SNOWFLAKE_PASSWORD }}"  
+#     role: ACCOUNTADMIN
+#     database: DEV_SANDBOX 
+#     warehouse: COMPUTE_WH 
+#     schema: RTZONEVA
     
 jobs:
     build-and-deploy:
