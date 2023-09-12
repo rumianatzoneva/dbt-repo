@@ -18,7 +18,7 @@ dbt_project:
       role: ACCOUNTADMIN
       database: DEV_SANDBOX 
       warehouse: COMPUTE_WH 
-      schema: "{{ env_var('SNOWFLAKE_SCHEMA_TEST') }}" 
+      schema: RTZONEVA
       
       # database: "{{ env_var('DBT_SNOWFLAKE_DATABASE') }}" 
       # warehouse: "{{ env_var('DBT_SNOWFLAKE_WAREHOUSE') }}" 
