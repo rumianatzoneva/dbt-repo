@@ -1,29 +1,4 @@
-# dbt_project:
-  
-#   outputs:
-#     dev:
-#       type: snowflake
-#       threads: 1
-#       account: "{{ env_var('DBT_SNOWFLAKE_ACCOUNT') }}" 
 
-#       # User/password auth
-#       user: "{{ env_var('DBT_SNOWFLAKE_USERNAME') }}" 
-#       password: "{{ env_var('DBT_SNOWFLAKE_PW') }}"
-
-#       role: "{{ env_var('DBT_SNOWFLAKE_ROLE') }}"
-#       database: 'DEV_SANDBOX'
-#       warehouse: 'DEV_WH'
-#       schema: 'RTZONEVA'
-#       client_session_keep_alive: False
-#       query_tag: github_action_query
-
-#       # optional
-#       connect_retries: 0 # default 0
-#       connect_timeout: 10 # default: 10
-#       retry_on_database_errors: False # default: false
-#       retry_all: False  # default: false
-#       reuse_connections: False # default: false (available v1.4+)
-#   target: dev
 
 dbt_project:
   
@@ -31,16 +6,23 @@ dbt_project:
     dev:
       type: snowflake
       threads: 1
+      #account: "{{ env_var('DBT_SNOWFLAKE_ACCOUNT') }}" 
+      # user: "{{ env_var('DBT_SNOWFLAKE_USERNAME') }}" 
+      # password: "{{ env_var('DBT_SNOWFLAKE_PW') }}"
+      #role: "{{ env_var('DBT_SNOWFLAKE_ROLE') }}"
 
-      # User/password auth
-      # account: zx15293.eu-west-3 : tested with zx15293.eu-west-3
       account: zx15293.eu-west-3
       user: RTZONEVA
       password: Rtzoneva1234!
-      role: ACCOUNTADMIN # "{{ env_var('DBT_SNOWFLAKE_ROLE') }}"
+      role: ACCOUNTADMIN
       database: DEV_SANDBOX # "{{ env_var('DBT_SNOWFLAKE_DATABASE') }}"
       warehouse: COMPUTE_WH # "{{ env_var('DBT_SNOWFLAKE_WAREHOUSE') }}"
       schema: RTZONEVA #"{{ env_var('DBT_SNOWFLAKE_SCHEMA') }}"
+      
+      # database: "{{ env_var('DBT_SNOWFLAKE_DATABASE') }}" 
+      # warehouse: "{{ env_var('DBT_SNOWFLAKE_WAREHOUSE') }}" 
+      # schema: "{{ env_var('DBT_SNOWFLAKE_SCHEMA') }}" 
+      threads: 1
       client_session_keep_alive: False
       query_tag: github_action_query
 
