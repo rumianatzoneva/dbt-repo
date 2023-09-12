@@ -14,13 +14,3 @@ sources:
         - name: customer_name
           tests:
             - not_null
-
-  - name: fivetran_snowflake
-    description: "Linkdin fivetran table"
-    database: dev_sandbox
-    schema: rtzoneva  
-    tables:
-      - name: campaign_history
-        columns:
-        - name: account_id
-        - name: format
