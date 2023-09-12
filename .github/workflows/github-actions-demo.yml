@@ -48,10 +48,13 @@ jobs:
          
         - name: Dump GITHUB_CONTEXT
           run: echo ${{ github.workspace }}
+
+        - name: Check files
+          run: dbt debug
         
         # dbt related commands here - run use --target prod/dev to run for specific environments
-        - name: Run dbt models
-          run: dbt run --select cust_model
+        # - name: Run dbt models
+        #   run: dbt run --select cust_model
 
         # - name: Test dbt models
         #   run: dbt test
