@@ -1,7 +1,7 @@
 
 
 dbt_project:
-  
+  target: dev
   outputs:
     dev:
       type: snowflake
@@ -24,4 +24,3 @@ dbt_project:
       retry_on_database_errors: True # default: false
       #retry_all: False  # default: false
       #reuse_connections: False # default: false (available v1.4+)
-  target: dev
