@@ -15,7 +15,7 @@ env:
     role: ACCOUNTADMIN
     database: DEV_SANDBOX 
     warehouse: COMPUTE_WH 
-    SNOWFLAKE_SCHEMA_TEST: "{{ env_var('SNOWFLAKE_SCHEMA_TEST') }}" 
+    schema: "{{ env_var('SNOWFLAKE_SCHEMA_TEST') }}" 
     
 jobs:
     build-and-deploy:
