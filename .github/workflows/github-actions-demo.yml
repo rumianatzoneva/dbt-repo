@@ -21,13 +21,13 @@ jobs:
     build-and-deploy:
         runs-on: ubuntu-latest
         env:            
-            account: 'snwflk_gtb.eu-west-1'
+            # account: 'snwflk_gtb.eu-west-1'
             user: RUMIANA_TZONEVA
             password: ${{ secrets.DBT_SNOWFLAKE_PW }}
-            role: ACCOUNTADMIN
-            database: DEV_SANDBOX 
-            warehouse: COMPUTE_WH 
-            schema: RTZONEVA
+            # role: ACCOUNTADMIN
+            # database: DEV_SANDBOX 
+            # warehouse: COMPUTE_WH 
+            # schema: RTZONEVA
 
             
             # DBT_SNOWFLAKE_DATABASE: "{{ env_var('DBT_SNOWFLAKE_DATABASE') }}"
