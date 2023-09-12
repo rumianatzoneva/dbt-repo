@@ -23,7 +23,7 @@ jobs:
         env:            
             account: 'snwflk_gtb.eu-west-1'
             user: RUMIANA_TZONEVA
-            password: ${{ secrets.SNOWFLAKE_PASSWORD }}
+            password: ${{ secrets.DBT_SNOWFLAKE_PW }}
             role: ACCOUNTADMIN
             database: DEV_SANDBOX 
             warehouse: COMPUTE_WH 
