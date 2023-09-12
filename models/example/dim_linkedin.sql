@@ -1,6 +1,13 @@
+-- with source as (
+--     select * from {{source('fivetran_snowflake', 'campaign_history') }}
+-- )
+
+-- select account_id, format
+-- from source
+
 with source as (
-    select * from {{source('fivetran_snowflake', 'campaign_history') }}
+    select * from {{source('snowflake', 'customer') }}
 )
 
-select account_id, format
+select *
 from source
