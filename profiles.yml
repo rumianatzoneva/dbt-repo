@@ -33,10 +33,11 @@ dbt_project:
       threads: 1
 
       # User/password auth
-      account: zx15293.eu-west-3 # 'ey37413.eu-west-3' or "{{ env_var('DBT_SNOWFLAKE_ACCOUNT') }}": tested with zx15293.eu-west-3
-      user: RTZONEVA #"{{ env_var('DBT_SNOWFLAKE_USERNAME') }}"
+      # account: zx15293.eu-west-3 # 'ey37413.eu-west-3' or "{{ env_var('DBT_SNOWFLAKE_ACCOUNT') }}": tested with zx15293.eu-west-3
+      account: "{{ env_var("SNOWFLAKE_ACCOUNT") }}"
+      username: "{{ env_var("SNOWFLAKE_USERNAME") }}"
+      password: "{{ env_var("SNOWFLAKE_PASSWORD") }}"
       role: ACCOUNTADMIN # "{{ env_var('DBT_SNOWFLAKE_ROLE') }}"
-      password: Rtzoneva1234! # "{{ env_var('DBT_SNOWFLAKE_PW') }}"
       database: DEV_SANDBOX # "{{ env_var('DBT_SNOWFLAKE_DATABASE') }}"
       warehouse: DEV_WH # "{{ env_var('DBT_SNOWFLAKE_WAREHOUSE') }}"
       schema: RTZONEVA #"{{ env_var('DBT_SNOWFLAKE_SCHEMA') }}"
