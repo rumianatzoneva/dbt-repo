@@ -17,8 +17,8 @@ sources:
 
   - name: fivetran_snowflake
     description: "Linkdin fivetran table"
-    database: fivetran_stg
-    schema: linkedin_ads  
+    database: dev_sandbox
+    schema: rtzoneva  
     tables:
       - name: campaign_history
         columns:
