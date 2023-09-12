@@ -1,4 +1,4 @@
-name: schedule_dbt_run
+name: build_models
 
 on: 
     pull_request:
