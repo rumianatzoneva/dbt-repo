@@ -15,12 +15,12 @@ sources:
           tests:
             - not_null
 
-  - name: fivetran_snowflake
-    description: "Linkdin fivetran table"
-    database: fivetran_stg
-    schema: linkedin_ads  
-    tables:
-      - name: campaign_history
-        columns:
-        - name: account_id
-        - name: format
+  # - name: fivetran_snowflake
+  #   description: "Linkdin fivetran table"
+  #   database: fivetran_stg
+  #   schema: linkedin_ads  
+  #   tables:
+  #     - name: campaign_history
+  #       columns:
+  #       - name: account_id
+  #       - name: format
