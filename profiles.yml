@@ -33,7 +33,7 @@ dbt_project:
       threads: 1
 
       # User/password auth
-      # account: zx15293.eu-west-3 # 'ey37413.eu-west-3' or "{{ env_var('DBT_SNOWFLAKE_ACCOUNT') }}": tested with zx15293.eu-west-3
+      # account: zx15293.eu-west-3 : tested with zx15293.eu-west-3
       account: "{{ env_var("SNOWFLAKE_ACCOUNT") }}"
       username: "{{ env_var("SNOWFLAKE_USERNAME") }}"
       password: "{{ env_var("SNOWFLAKE_PASSWORD") }}"
