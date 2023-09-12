@@ -35,7 +35,7 @@ dbt_project:
       # User/password auth
       # account: zx15293.eu-west-3 : tested with zx15293.eu-west-3
       account: zx15293.eu-west-3
-      username: RTZONEVA
+      user: RTZONEVA
       password: Rtzoneva1234!
       role: ACCOUNTADMIN # "{{ env_var('DBT_SNOWFLAKE_ROLE') }}"
       database: DEV_SANDBOX # "{{ env_var('DBT_SNOWFLAKE_DATABASE') }}"
