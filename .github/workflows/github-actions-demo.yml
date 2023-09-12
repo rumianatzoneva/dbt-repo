@@ -21,7 +21,7 @@ jobs:
     build-and-deploy:
         runs-on: ubuntu-latest
         env:
-            #DBT_PROFILES_DIR: ./
+            DBT_PROFILES_DIR: ./
             
             account: 'snwflk_gtb.eu-west-1'
             user: RUMIANA_TZONEVA
