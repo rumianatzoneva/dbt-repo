@@ -57,7 +57,7 @@ jobs:
           run: echo ${{ github.workspace }}
 
         - name: DBT DEBUG
-          run: dbt debug --config-dir
+          run: xdg-open /home/runner/work/dbt-repo/dbt-repo # dbt debug --config-dir
 
         
         # dbt related commands here - run use --target prod/dev to run for specific environments
