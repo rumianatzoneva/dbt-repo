@@ -44,11 +44,14 @@ jobs:
           uses: actions/setup-python@v4
           with: 
             python-version: "3.9"
-
-        - name: Install dependencies
-          run: |
-            pip3 install dbt-snowflake
-            dbt deps
+        
+        - name: Install dbt with snowflake connector
+          run: pip3 install dbt-snowflake
+            
+        # - name: Install dependencies
+        #   run: |
+        #     pip3 install dbt-snowflake
+        #     dbt deps
          
         - name: Dump GITHUB_CONTEXT
           run: echo ${{ github.workspace }}
