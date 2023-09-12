@@ -72,6 +72,23 @@ jobs:
 
         - name: DBT DEBUG
           run: dbt debug --profiles-dir $PWD
+          env:
+              SNOWFLAKE_ACCOUNT:   ${{ secrets.SNOWFLAKE_ACCOUNT }}
+              SNOWFLAKE_USERNAME: ${{ secrets.SNOWFLAKE_USERNAME }}
+              SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
+              SNOWFLAKE_ROLE: ACCOUNTADMIN
+              SNOWFLAKE_DATABASE: DEV_SANDBOX
+              SNOWFLAKE_WAREHOUSE: DEV_WH
+              SNOWFLAKE_SCHEMA: RTZONEVA 
+            
+              ACCOUNT:   ${{ secrets.SNOWFLAKE_ACCOUNT }}
+              USER: ${{ secrets.SNOWFLAKE_USERNAME }}
+              PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
+              ROLE: ACCOUNTADMIN
+              DATABASE: DEV_SANDBOX
+              WAREHOUSE: DEV_WH
+              SCHEMA: RTZONEVA 
+
         
         # dbt related commands here - run use --target prod/dev to run for specific environments
         # - name: Run dbt models
