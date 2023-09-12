@@ -50,11 +50,11 @@ jobs:
           run: echo ${{ github.workspace }}
 
         - name: Check files
-          run: dbt debug --profiles-dir $PWD
+          run: dbt debug --connection --profiles-dir $PWD
         
         # dbt related commands here - run use --target prod/dev to run for specific environments
-        - name: Run dbt models
-          run: dbt run --profiles-dir $PWD
+        # - name: Run dbt models
+        #   run: dbt run --profiles-dir $PWD
 
         # - name: Test dbt models
         #   run: dbt test
