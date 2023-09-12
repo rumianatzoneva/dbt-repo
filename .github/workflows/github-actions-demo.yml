@@ -20,13 +20,17 @@ env:
 jobs:
     build-and-deploy:
         runs-on: ubuntu-latest
-            # DBT_PROFILES_DIR: ./
+        env:
+            #DBT_PROFILES_DIR: ./
             
-            # DBT_SNOWFLAKE_ACCOUNT: "{{ env_var('DBT_SNOWFLAKE_ACCOUNT') }}"
+            SNOWFLAKE_ACCOUNT:   ${{ secrets.SNOWFLAKE_ACCOUNT }}
+            SNOWFLAKE_USERNAME: ${{ secrets.SNOWFLAKE_USERNAME }}
+            SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
+            DBT_SNOWFLAKE_ROLE: ACCOUNTADMIN
             
-            # DBT_SNOWFLAKE_USERNAME: ${{ secrets.DBT_SNOWFLAKE_USERNAME }}
-            # DBT_SNOWFLAKE_PW: ${{ secrets.DBT_SNOWFLAKE_PW }}
-            # DBT_SNOWFLAKE_ROLE: ${{ secrets.DBT_SNOWFLAKE_ROLE }}
+            DBT_SNOWFLAKE_DATABASE: DEV_SANDBOX
+            DBT_SNOWFLAKE_WAREHOUSE: DEV_WH
+            DBT_SNOWFLAKE_SCHEMA: RTZONEVA 
             
             # DBT_SNOWFLAKE_DATABASE: "{{ env_var('DBT_SNOWFLAKE_DATABASE') }}"
             # DBT_SNOWFLAKE_WAREHOUSE: "{{ env_var('DBT_SNOWFLAKE_WAREHOUSE') }}"
@@ -51,7 +55,7 @@ jobs:
         - name: Dump GITHUB_CONTEXT
           run: echo ${{ github.workspace }}
 
-        - name: Check files
+        - name: DBT DEBUG
           run: dbt debug --connection --profiles-dir $PWD
         
         # dbt related commands here - run use --target prod/dev to run for specific environments
