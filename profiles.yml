@@ -7,7 +7,7 @@ dbt_project:
       type: snowflake
       threads: 1
 
-      account: https://snwflk_gtb.eu-west-1.snowflakecomputing.com/ # 'snwflk_gtb.eu-west-1'
+      account: snwflk_gtb.eu-west-1.aws
       user: RUMIANA_TZONEVA
       password:  "{{ env_var('DBT_SNOWFLAKE_PW') }}"
       role: ACCOUNTADMIN
