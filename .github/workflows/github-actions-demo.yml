@@ -20,12 +20,10 @@ on:
 jobs:
     build-and-deploy:
         runs-on: ubuntu-latest
-        env:
-            DBT_PROFILES_DIR: ./
-            
+        env:            
             account: 'snwflk_gtb.eu-west-1'
             user: RUMIANA_TZONEVA
-            password: "{{ secrets.SNOWFLAKE_PASSWORD }}"  
+            password: ${{ secrets.SNOWFLAKE_PASSWORD }}
             role: ACCOUNTADMIN
             database: DEV_SANDBOX 
             warehouse: COMPUTE_WH 
@@ -56,28 +54,12 @@ jobs:
           run: echo ${{ github.workspace }}
 
         - name: DBT DEBUG
-          run: dbt debug --profiles-dir $PWD
-          env:
-              SNOWFLAKE_ACCOUNT:   ${{ secrets.SNOWFLAKE_ACCOUNT }}
-              SNOWFLAKE_USERNAME: ${{ secrets.SNOWFLAKE_USERNAME }}
-              SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
-              SNOWFLAKE_ROLE: ACCOUNTADMIN
-              SNOWFLAKE_DATABASE: DEV_SANDBOX
-              SNOWFLAKE_WAREHOUSE: DEV_WH
-              SNOWFLAKE_SCHEMA: RTZONEVA 
-            
-              ACCOUNT:   ${{ secrets.SNOWFLAKE_ACCOUNT }}
-              USER: ${{ secrets.SNOWFLAKE_USERNAME }}
-              PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
-              ROLE: ACCOUNTADMIN
-              DATABASE: DEV_SANDBOX
-              WAREHOUSE: DEV_WH
-              SCHEMA: RTZONEVA 
+          run: dbt debug
 
         
         # dbt related commands here - run use --target prod/dev to run for specific environments
-        # - name: Run dbt models
-        #   run: dbt run --profiles-dir $PWD
+        - name: Run dbt models
+          run: dbt build --profiles-dir . --target dev
 
         # - name: Test dbt models
         #   run: dbt test
