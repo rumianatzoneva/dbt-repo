@@ -11,13 +11,14 @@ dbt_project:
       # password: "{{ env_var('DBT_SNOWFLAKE_PW') }}"
       #role: "{{ env_var('DBT_SNOWFLAKE_ROLE') }}"
 
-      account: ey37413.eu-west-3 #zx15293.eu-west-3
-      user: RTZONEVA
-      password: Rtzoneva1234!
+
+      account: 'snwflk_gtb.eu-west-1'
+      user: RUMIANA_TZONEVA
+      password: "{{ secrets.SNOWFLAKE_PASSWORD }}"  
       role: ACCOUNTADMIN
-      database: DEV_SANDBOX # "{{ env_var('DBT_SNOWFLAKE_DATABASE') }}"
-      warehouse: COMPUTE_WH # "{{ env_var('DBT_SNOWFLAKE_WAREHOUSE') }}"
-      schema: RTZONEVA #"{{ env_var('DBT_SNOWFLAKE_SCHEMA') }}"
+      database: DEV_SANDBOX 
+      warehouse: COMPUTE_WH 
+      schema: "{{ env_var('SNOWFLAKE_SCHEMA_TEST') }}" 
       
       # database: "{{ env_var('DBT_SNOWFLAKE_DATABASE') }}" 
       # warehouse: "{{ env_var('DBT_SNOWFLAKE_WAREHOUSE') }}" 
