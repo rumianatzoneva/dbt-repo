@@ -6,17 +6,13 @@ on:
     
     workflow_dispatch:
 
-# env:
-#     DBT_PROFILES_DIR: ./
-    
-#     account: 'snwflk_gtb.eu-west-1'
-#     user: RUMIANA_TZONEVA
-#     password: "{{ secrets.SNOWFLAKE_PASSWORD }}"  
-#     role: ACCOUNTADMIN
-#     database: DEV_SANDBOX 
-#     warehouse: COMPUTE_WH 
-#     schema: RTZONEVA
-    
+env:
+   DBT_PROFILES_DIR: ./
+
+   DBT_SNOWFLAKE_USERNAME: ${{ secrets.DBT_SNOWFLAKE_USERNAME }}
+   DBT_SNOWFLAKE_PW: ${{ secrets.DBT_SNOWFLAKE_PW }}
+   DBT_SNOWFLAKE_ROLE: ${{ secrets.DBT_SNOWFLAKE_ROLE }}
+   
 jobs:
     build-and-deploy:
         runs-on: ubuntu-latest
@@ -57,6 +53,7 @@ jobs:
           run: echo ${{ github.workspace }}
 
         - name: DBT DEBUG
+        
           run: dbt debug
 
         
