@@ -1,4 +1,3 @@
-{% docs __overview__ %}
 
 ![dbt Logo](https://github.com/VMLYR/ford-hub-project/blob/main/assets/logo.jpg)
 
@@ -19,5 +18,3 @@ The Ford Hub project collects and transforms diverse European data sources for f
 - Find [dbt events](https://events.getdbt.com) near you
 - Check out the [blog](https://blog.getdbt.com) for the latest news on dbt's development and best practices
 
-
-{% enddocs %}
